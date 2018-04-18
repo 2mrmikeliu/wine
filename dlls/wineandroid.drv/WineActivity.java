@@ -165,6 +165,7 @@ public class WineActivity extends Activity
     private final boolean isFileWanted( String name )
     {
         if (name.equals( "files.sum" )) return true;
+        if (name.startsWith( "prefix/" )) return true;
         if (name.startsWith( "share/" )) return true;
         if (name.startsWith( Build.CPU_ABI + "/system/" )) return false;
         if (name.startsWith( Build.CPU_ABI + "/" )) return true;
