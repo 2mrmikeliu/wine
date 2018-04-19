@@ -205,9 +205,11 @@ VOID WINAPI GetNativeSystemInfo(
 BOOL WINAPI IsProcessorFeaturePresent (
 	DWORD feature	/* [in] Feature number, (PF_ constants from "winnt.h") */) 
 {
+#ifndef __ANDROID__
   if (feature < PROCESSOR_FEATURE_MAX)
     return SHARED_DATA->ProcessorFeatures[feature];
   else
+#endif
     return FALSE;
 }
 
